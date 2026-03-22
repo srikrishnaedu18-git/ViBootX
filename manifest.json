@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "College Course Semester Toggle",
-  "version": "1.0.0",
-  "description": "Adds Winter/Fall toggle filters to the course dropdown.",
+  "name": "ViBootX",
+  "version": "1.2.0",
+  "description": "Semester filter and auto-search helper for VTOP course materials.",
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://vtop.vit.ac.in/vtop/content/*"],
