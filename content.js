@@ -173,6 +173,8 @@
     const header = getHeaderAnchor();
     if (!header) return;
 
+    header.classList.add("vibootx-header-layout");
+
     const existingHost = document.getElementById("vibootx-host");
     const existingWrapper = document.getElementById("semester-toggle-wrapper");
 

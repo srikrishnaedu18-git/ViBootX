@@ -1,7 +1,19 @@
+.vibootx-header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.vibootx-header-layout > .col-auto {
+  flex: 0 1 auto;
+}
+
 #vibootx-host {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  flex: 1 1 560px;
   margin-left: auto;
 }
 
@@ -332,6 +344,15 @@
 }
 
 @media (max-width: 900px) {
+  .vibootx-header-layout {
+    align-items: stretch;
+  }
+
+  #vibootx-host {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
   #semester-toggle-wrapper {
     width: 100%;
     max-width: 100%;
