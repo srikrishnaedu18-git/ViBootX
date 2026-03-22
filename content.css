@@ -1,0 +1,90 @@
+#semester-toggle-wrapper {
+  position: static;
+  top: auto;
+  right: auto;
+  margin-left: auto;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 8px 10px;
+  font-family: Arial, sans-serif;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#semester-toggle-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #222;
+}
+
+#semester-toggle-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.semester-toggle-btn {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f1f3f5;
+  color: #222;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.semester-toggle-btn:hover {
+  background: #e2e6ea;
+}
+
+.semester-toggle-btn.active {
+  background: #0d6efd;
+  color: #fff;
+}
+
+#semester-toggle-note {
+  margin-top: 0;
+  font-size: 11px;
+  color: #555;
+}
+
+#semester-toggle-minimize {
+  position: static;
+  top: auto;
+  right: auto;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  color: #666;
+  margin-right: 4px;
+}
+
+#semester-toggle-wrapper.minimized {
+  padding: 6px 8px;
+  min-width: auto;
+}
+
+#semester-toggle-wrapper.minimized #semester-toggle-title,
+#semester-toggle-wrapper.minimized #semester-toggle-buttons,
+#semester-toggle-wrapper.minimized #semester-toggle-note {
+  display: none;
+}
+
+#semester-toggle-mini-label {
+  display: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #222;
+}
+
+#semester-toggle-wrapper.minimized #semester-toggle-mini-label {
+  display: block;
+}

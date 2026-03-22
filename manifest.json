@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "College Course Semester Toggle",
+  "version": "1.0.0",
+  "description": "Adds Winter/Fall toggle filters to the course dropdown.",
+  "content_scripts": [
+    {
+      "matches": ["https://vtop.vit.ac.in/vtop/content/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
