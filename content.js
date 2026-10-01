@@ -10,7 +10,7 @@
   };
 
   let currentMode = "all";
-  let isAccordionExpanded = true;
+  let isAccordionExpanded = false;
   let winterMappings = [];
   let fallMappings = [];
 
@@ -80,7 +80,7 @@
     ]);
 
     currentMode = result[STORAGE_KEYS.mode] || "all";
-    isAccordionExpanded = result[STORAGE_KEYS.accordion] !== false;
+    isAccordionExpanded = result[STORAGE_KEYS.accordion] === true;
     winterMappings = cleanStoredMappings(result[STORAGE_KEYS.winter]);
     fallMappings = cleanStoredMappings(result[STORAGE_KEYS.fall]);
   }
@@ -201,7 +201,7 @@
           <button class="semester-toggle-btn" data-mode="winter" type="button">Winter</button>
           <button class="semester-toggle-btn" data-mode="fall" type="button">Fall</button>
         </div>
-        <button id="semester-toggle-chevron" type="button">▾</button>
+        <button id="semester-toggle-chevron" type="button">▸</button>
       </div>
 
       <div id="semester-toggle-accordion">
@@ -228,14 +228,6 @@
         await onModeChange(btn.dataset.mode);
       });
     });
-
-    wrapper
-      .querySelector("#semester-toggle-top")
-      .addEventListener("click", async (event) => {
-        if (event.target.closest(".semester-toggle-btn")) return;
-        if (event.target.closest("#semester-toggle-chevron")) return;
-        await toggleAccordion();
-      });
 
     wrapper
       .querySelector("#semester-toggle-chevron")
