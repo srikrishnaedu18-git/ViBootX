@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ViBootX</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="vx-popup">
+
+    <!-- Header -->
+    <div class="vx-header">
+      <div class="vx-header-top">
+        <div class="vx-logo">
+          <span class="vx-dot"></span>
+          <span class="vx-brand">ViBootX</span>
+        </div>
+        <!-- Phone-style pagination dots -->
+        <div class="vx-dots" id="vx-dots" title="Switch accounts"></div>
+      </div>
+      <div class="vx-header-sub">
+        <span class="vx-subtitle">VTOP Auto-Login</span>
+        <span class="vx-account-badge" id="vx-account-badge">Account 1 • Active</span>
+      </div>
+    </div>
+
+    <!-- Phone-style Carousel Viewport -->
+    <div class="vx-carousel-viewport" id="vx-carousel-viewport">
+      <div class="vx-carousel-track" id="vx-carousel-track">
+        <!-- Slides dynamically rendered by popup.js -->
+      </div>
+    </div>
+
+    <!-- Bottom Section: Auto Submit & Footer -->
+    <div class="vx-bottom-section">
+      <!-- Auto Submit Toggle -->
+      <div class="vx-toggle-row">
+        <div class="vx-toggle-info">
+          <span class="vx-toggle-label">Auto Submit</span>
+          <span class="vx-toggle-desc">Click Submit after filling captcha</span>
+        </div>
+        <label class="vx-switch" for="vx-autosubmit" title="Toggle auto-submit">
+          <input type="checkbox" id="vx-autosubmit">
+          <span class="vx-slider"></span>
+        </label>
+      </div>
+
+      <!-- Dashboard Marks Toggle -->
+      <div class="vx-toggle-row">
+        <div class="vx-toggle-info">
+          <span class="vx-toggle-label">Dashboard Marks</span>
+          <span class="vx-toggle-desc">Show semester marks card on home</span>
+        </div>
+        <label class="vx-switch" for="vx-dashboard-marks" title="Toggle marks on dashboard">
+          <input type="checkbox" id="vx-dashboard-marks">
+          <span class="vx-slider"></span>
+        </label>
+      </div>
+
+      <!-- Footer -->
+      <div class="vx-footer">
+        Active account auto-fills &amp; solves captcha on VTOP
+      </div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

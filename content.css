@@ -37,6 +37,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 #semester-toggle-title {
@@ -51,6 +52,7 @@
   display: flex;
   gap: 6px;
   flex: 1;
+  cursor: default;
 }
 
 .semester-toggle-btn {
@@ -260,25 +262,27 @@
 
 .action-btn.grey-tick,
 .action-btn.grey-edit {
-  color: #6b7280;
-  border-color: #d1d5db;
+  color: #4b5563;
+  border-color: #cbd5e1;
+  background: #ffffff;
 }
 
 .action-btn.grey-tick:hover,
 .action-btn.grey-edit:hover {
-  background: #f3f4f6;
+  background: #eef2f7;
 }
 
 .action-btn.green-tick,
 .action-btn.green-edit {
-  color: #16a34a;
-  border-color: rgba(22, 163, 74, 0.28);
-  background: rgba(22, 163, 74, 0.08);
+  color: #ffffff;
+  border-color: #15803d;
+  background: #16a34a;
 }
 
 .action-btn.green-tick:hover,
 .action-btn.green-edit:hover {
-  background: rgba(22, 163, 74, 0.12);
+  background: #15803d;
+  border-color: #166534;
 }
 
 .auto-search-empty {

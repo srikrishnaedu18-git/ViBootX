@@ -1,0 +1,361 @@
+/* ViBootX — Marks View Styles (Dashboard & Marks Page) */
+
+/* ── Custom Scrollbars ─────────────────────────────────────── */
+.vx-marks-scroll-container::-webkit-scrollbar,
+#fixedTableContainer::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vx-marks-scroll-container::-webkit-scrollbar-track,
+#fixedTableContainer::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.vx-marks-scroll-container::-webkit-scrollbar-thumb,
+#fixedTableContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+}
+
+.vx-marks-scroll-container::-webkit-scrollbar-thumb:hover,
+#fixedTableContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ── Main Page Dashboard Marks Card ────────────────────────── */
+#vx-dashboard-marks-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 16px !important;
+}
+
+#vx-dashboard-marks-card .card-header {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.vx-marks-scroll-container {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: #f8fafc;
+  padding: 10px;
+  display: block !important;
+}
+
+/* ── Compact Subject Card ──────────────────────────────────── */
+.vx-subject-card {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  margin-bottom: 12px !important;
+  display: block !important;
+  width: 100% !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vx-subject-card:last-child {
+  margin-bottom: 0 !important;
+}
+
+.vx-subject-card:hover {
+  border-color: #94a3b8 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* ── Heading as Subject Title ──────────────────────────────── */
+.vx-subject-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 6px 12px !important;
+  padding: 8px 12px !important;
+  background: #f1f5f9 !important;
+  border-bottom: 1px solid #cbd5e1 !important;
+  border-left: 4px solid #3b82f6 !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.vx-sh-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex: 1 1 auto !important;
+}
+
+.vx-sh-sno {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 22px !important;
+  height: 22px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  background: #e2e8f0 !important;
+  border-radius: 4px !important;
+  padding: 0 5px !important;
+}
+
+.vx-sh-title-wrap {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+}
+
+.vx-sh-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.1px;
+}
+
+.vx-sh-code {
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  background: #e2e8f0 !important;
+  padding: 1px 6px !important;
+  border-radius: 3px !important;
+  letter-spacing: 0.2px;
+}
+
+.vx-sh-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.vx-sh-faculty {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.vx-sh-label {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 10px;
+  margin-right: 2px;
+}
+
+.vx-sh-slot {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  letter-spacing: 0.2px;
+}
+
+.vx-total-weightage-pill {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #15803d;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 1px 7px;
+  border-radius: 4px;
+}
+
+.vx-total-weightage-pill strong {
+  font-weight: 700;
+  color: #166534;
+}
+
+/* ── Under Rows: Small Table with Mark Information ─────────── */
+.vx-subject-body {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+}
+
+.vx-compact-table {
+  width: 100% !important;
+  margin: 0 !important;
+  border-collapse: collapse !important;
+  display: table !important;
+  background: #ffffff !important;
+}
+
+.vx-compact-table thead {
+  display: table-header-group !important;
+}
+
+.vx-compact-table thead tr {
+  display: table-row !important;
+}
+
+.vx-compact-table thead th {
+  display: table-cell !important;
+  background: #f8fafc !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+  padding: 7px 14px !important;
+  border-top: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  white-space: nowrap !important;
+}
+
+.vx-compact-table tbody {
+  display: table-row-group !important;
+}
+
+.vx-compact-table tbody tr {
+  display: table-row !important;
+  transition: background-color 0.12s ease;
+}
+
+.vx-compact-table tbody td {
+  display: table-cell !important;
+  font-size: 12px !important;
+  padding: 7px 14px !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  color: #1e293b !important;
+  line-height: 1.4 !important;
+}
+
+.vx-compact-table tbody td.text-center {
+  white-space: nowrap !important;
+}
+
+.vx-compact-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.vx-compact-table tbody tr:hover {
+  background: #f8fafc !important;
+}
+
+.vx-mark-scored {
+  font-weight: 700 !important;
+  color: #16a34a !important;
+}
+
+.vx-mark-weightage {
+  font-weight: 700 !important;
+  color: #4f46e5 !important;
+}
+
+.vx-no-marks-box {
+  padding: 7px 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 11px;
+  background: #ffffff;
+}
+
+.vx-empty-marks {
+  padding: 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.vx-loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 20px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.vx-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e2e8f0;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: vxSpin 0.7s linear infinite;
+}
+
+@keyframes vxSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Filtered Styles for Dedicated Marks Page (#studentMarkView) ── */
+#fixedTableContainer.vx-styled {
+  max-height: 540px !important;
+  overflow-y: auto !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Sticky Header on Dedicated Marks Page */
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader td {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f8fafc !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Hide unwanted upper table columns on dedicated Marks page:
+   Keep: 1 (Sl.No.), 4 (Course Title), 7 (Faculty), 8 (Slot)
+   Hide: 2 (ClassNbr), 3 (Course Code), 5 (Course Type), 6 (Course System), 9 (Course Mode) */
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader > td:nth-child(2),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader > td:nth-child(3),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader > td:nth-child(5),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader > td:nth-child(6),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableHeader > td:nth-child(9),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableContent > td:nth-child(2),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableContent > td:nth-child(3),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableContent > td:nth-child(5),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableContent > td:nth-child(6),
+#fixedTableContainer.vx-styled .customTable > tbody > tr.tableContent > td:nth-child(9) {
+  display: none !important;
+}
+
+/* Hide unwanted sub-table columns on dedicated Marks page:
+   Keep: 1 (Sl.No.), 2 (Mark Title), 3 (Max. Mark), 6 (Scored Mark), 7 (Weightage Mark)
+   Hide: 4 (Weightage %), 5 (Status), 8 (Remark) */
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableHeader-level1 > td:nth-child(4),
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableHeader-level1 > td:nth-child(5),
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableHeader-level1 > td:nth-child(8),
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableContent-level1 > td:nth-child(4),
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableContent-level1 > td:nth-child(5),
+#fixedTableContainer.vx-styled .customTable-level1 tr.tableContent-level1 > td:nth-child(8) {
+  display: none !important;
+}
+
+/* Compact padding for dedicated Marks page */
+#fixedTableContainer.vx-styled table.customTable > tbody > tr > td,
+#fixedTableContainer.vx-styled table.customTable-level1 > tbody > tr > td {
+  padding: 5px 8px !important;
+  font-size: 11.5px !important;
+  vertical-align: middle !important;
+}
+

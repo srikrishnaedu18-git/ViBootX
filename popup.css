@@ -1,0 +1,498 @@
+/* ViBootX Popup Styles — Mobile-style Multi-Account Carousel */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 300px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  user-select: none;
+}
+
+/* ── Container ──────────────────────────────────────────── */
+.vx-popup {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.vx-header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vx-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vx-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vx-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+  flex-shrink: 0;
+}
+
+.vx-brand {
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a5b4fc, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.3px;
+}
+
+/* Phone-style Pagination Dots */
+.vx-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.vx-dot-item {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #334155;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vx-dot-item:hover {
+  background: #64748b;
+  transform: scale(1.2);
+}
+
+.vx-dot-item.active {
+  width: 16px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+}
+
+.vx-dot-item.new-dot {
+  border: 1px dashed #64748b;
+  background: transparent;
+}
+
+.vx-dot-item.new-dot.active {
+  border: none;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
+
+.vx-header-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 17px;
+}
+
+.vx-subtitle {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.vx-account-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+}
+
+.vx-account-badge.is-new {
+  background: rgba(168, 85, 247, 0.15);
+  color: #d8b4fe;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* ── Carousel Viewport & Track ──────────────────────────── */
+.vx-carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.vx-carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.vx-carousel-track {
+  display: flex;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 100%;
+}
+
+/* ── Individual Slide ───────────────────────────────────── */
+.vx-slide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 14px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  box-sizing: border-box;
+}
+
+/* ── Fields ─────────────────────────────────────────────── */
+.vx-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vx-field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vx-field label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.vx-slide-tag {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Username Row with Right Arrow at Dead Right End */
+.vx-username-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.vx-input-grow {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Standard input container */
+.vx-input-row {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 38px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vx-input-row:focus-within {
+  border-color: rgba(129, 140, 248, 0.6);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.12);
+}
+
+.vx-input-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 11px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #f1f5f9;
+  min-width: 0;
+  height: 100%;
+  user-select: text;
+}
+
+.vx-input-row input::placeholder {
+  color: #475569;
+}
+
+/* ── Arrow Nav Group (Right Arrow at Dead Right End) ───── */
+.vx-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.vx-arrow-btn {
+  width: 36px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.vx-arrow-btn svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+.vx-arrow-btn:hover {
+  background: rgba(99, 102, 241, 0.28);
+  border-color: rgba(129, 140, 248, 0.6);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
+}
+
+.vx-arrow-btn:active {
+  transform: scale(0.95);
+}
+
+/* Prominent Right Arrow */
+.vx-arrow-btn.vx-arrow-next {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.22), rgba(56, 189, 248, 0.22));
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #38bdf8;
+}
+
+.vx-arrow-btn.vx-arrow-next:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.45), rgba(56, 189, 248, 0.45));
+  color: #ffffff;
+}
+
+/* Left Arrow for navigating back */
+.vx-arrow-btn.vx-arrow-prev {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+}
+
+.vx-arrow-btn.vx-arrow-prev:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+/* ── Eye button ─────────────────────────────────────────── */
+.vx-eye {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 0 10px;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: color 0.2s ease;
+}
+
+.vx-eye:hover {
+  color: #a5b4fc;
+}
+
+.vx-eye svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* ── Slide Actions (Save / Delete / Status) ──────────────── */
+.vx-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.vx-btn-save {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  letter-spacing: 0.2px;
+  flex-shrink: 0;
+}
+
+.vx-btn-save:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.vx-btn-save:active {
+  transform: translateY(0);
+}
+
+.vx-btn-save.is-new-save {
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+}
+
+.vx-btn-delete {
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 7px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.vx-btn-delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #fca5a5;
+}
+
+.vx-status {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #22c55e;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vx-status.visible {
+  opacity: 1;
+}
+
+/* ── Bottom Section (Auto-submit & Footer) ──────────────── */
+.vx-bottom-section {
+  padding: 0 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Auto Submit Toggle Row */
+.vx-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.vx-toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vx-toggle-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.vx-toggle-desc {
+  font-size: 9.5px;
+  color: #475569;
+}
+
+/* iOS-style switch */
+.vx-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.vx-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.vx-slider {
+  position: absolute;
+  inset: 0;
+  background: #1e293b;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 999px;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.vx-slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #64748b;
+  border-radius: 50%;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.vx-switch input:checked + .vx-slider {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  border-color: #6366f1;
+}
+
+.vx-switch input:checked + .vx-slider::before {
+  transform: translateX(18px) translateY(-50%);
+  background: #fff;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.vx-footer {
+  font-size: 9.5px;
+  color: #334155;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 8px;
+  text-align: center;
+  letter-spacing: 0.2px;
+}

@@ -1,14 +1,57 @@
 {
   "manifest_version": 3,
   "name": "ViBootX",
-  "version": "1.2.0",
-  "description": "Semester filter and auto-search helper for VTOP course materials.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vibootx@vtop.extension",
+      "strict_min_version": "109.0"
+    }
+  },
+  "version": "1.4.0",
+  "description": "VTOP auto-login: solves captcha, fills credentials, semester filter & faculty auto-search.",
   "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "default_title": "ViBootX – VTOP Auto-Login"
+  },
   "content_scripts": [
     {
-      "matches": ["https://vtop.vit.ac.in/vtop/content/*"],
+      "matches": [
+        "https://vtop.vit.ac.in/vtop/content/*"
+      ],
       "js": ["content.js"],
       "css": ["content.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://vtop.vit.ac.in/vtop/*",
+        "https://vtopcc.vit.ac.in/*",
+        "https://vtopreg.vit.ac.in/*"
+      ],
+      "js": ["nn_model.js", "captcha_solver.js", "login.js"],
+      "css": ["login.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://vtop.vit.ac.in/vtop/*",
+        "https://vtopcc.vit.ac.in/*",
+        "https://vtopreg.vit.ac.in/*"
+      ],
+      "js": ["marks.js"],
+      "css": ["marks.css"],
       "run_at": "document_idle"
     }
   ]

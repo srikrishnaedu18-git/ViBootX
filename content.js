@@ -169,6 +169,12 @@
       : "Expand Auto Search";
   }
 
+  async function toggleAccordion() {
+    isAccordionExpanded = !isAccordionExpanded;
+    updateAccordionUi();
+    await persistSettings();
+  }
+
   function injectPanel() {
     const header = getHeaderAnchor();
     if (!header) return;
@@ -224,11 +230,17 @@
     });
 
     wrapper
+      .querySelector("#semester-toggle-top")
+      .addEventListener("click", async (event) => {
+        if (event.target.closest(".semester-toggle-btn")) return;
+        if (event.target.closest("#semester-toggle-chevron")) return;
+        await toggleAccordion();
+      });
+
+    wrapper
       .querySelector("#semester-toggle-chevron")
       .addEventListener("click", async () => {
-        isAccordionExpanded = !isAccordionExpanded;
-        updateAccordionUi();
-        await persistSettings();
+        await toggleAccordion();
       });
 
     updateActiveModeButtons();
@@ -356,14 +368,22 @@
     return "Viewing Winter first, then Fall";
   }
 
+  function hasMappingContent(mapping) {
+    return Boolean(
+      String(mapping.subject || "").trim() || String(mapping.faculty || "").trim(),
+    );
+  }
+
   function getActionStateClass(mapping) {
-    if (!mapping.isSaved) return "grey-tick";
+    if (!mapping.isSaved) {
+      return hasMappingContent(mapping) ? "green-tick" : "grey-tick";
+    }
     return mapping.isDirty ? "green-edit" : "grey-edit";
   }
 
   function getActionStateIcon(mapping) {
     if (!mapping.isSaved) return "✓";
-    return "✎";
+    return "✐";
   }
 
   function clearFeedbackTimer(mappingId) {
